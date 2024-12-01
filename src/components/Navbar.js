@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {
   AppBar,
-  Box,
-  Container,
+  Toolbar,
   IconButton,
-  Stack,
-  Typography,
-  useScrollTrigger,
+  Box,
+  useTheme,
+  useMediaQuery,
   Drawer,
   List,
   ListItem,
   ListItemText,
-  useTheme,
-  useMediaQuery,
+  Typography,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -24,11 +22,6 @@ function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const location = useLocation();
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,7 +125,7 @@ function Navbar() {
         py: isScrolled ? 1 : 2,
       }}
     >
-      <Container maxWidth="lg">
+      <Toolbar>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography
             variant="h6"
@@ -166,7 +159,7 @@ function Navbar() {
               <MenuIcon />
             </IconButton>
           ) : (
-            <Stack direction="row" spacing={1}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {navItems.map((item) => (
                 <Box
                   key={item.name}
@@ -205,10 +198,10 @@ function Navbar() {
                   {item.name}
                 </Box>
               ))}
-            </Stack>
+            </Box>
           )}
         </Box>
-      </Container>
+      </Toolbar>
 
       <Drawer
         variant="temporary"

@@ -35,11 +35,6 @@ const shimmer = keyframes`
   100% { background-position: 1000px 0; }
 `;
 
-const float = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-`;
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',

@@ -20,7 +20,6 @@ import {
 } from '@mui/material';
 import { keyframes } from '@mui/system';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import CloseIcon from '@mui/icons-material/Close';
 
 const fadeIn = keyframes`
@@ -32,12 +31,6 @@ const fadeIn = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`;
-
-const float = keyframes`
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
 `;
 
 function Blog() {

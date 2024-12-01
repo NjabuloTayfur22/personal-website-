@@ -40,14 +40,16 @@ function Hero() {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
-        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
         background: 'linear-gradient(-45deg, #1e293b, #0f172a, #312e81, #1e1b4b)',
         backgroundSize: '400% 400%',
         animation: 'gradientMove 15s ease infinite',
-        position: 'relative',
-        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -90,7 +92,6 @@ function Hero() {
           {/* Profile Picture with Enhanced Effects */}
           <Box
             sx={{
-              display: 'flex',
               animation: `${float} 6s ease-in-out infinite`,
               position: 'relative',
               width: { xs: '260px', sm: '300px', md: '340px' },
